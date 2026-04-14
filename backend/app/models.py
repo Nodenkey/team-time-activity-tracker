@@ -1,13 +1,13 @@
 from __future__ import annotations
 
-from datetime import date
+from datetime import date as date_type
 from typing import Optional
 
 from pydantic import BaseModel, Field, field_validator
 
 
 class TimeEntryBase(BaseModel):
-    date: date = Field(..., description="Entry date (YYYY-MM-DD)")
+    date: date_type = Field(..., description="Entry date (YYYY-MM-DD)")
     person: str = Field(..., min_length=1, description="Person who logged the time")
     team: str = Field(..., min_length=1, description="Team name")
     activity: str = Field(..., min_length=1, description="Description of the activity")
@@ -34,7 +34,7 @@ class TimeEntryResponse(TimeEntryBase):
 
 
 class EntriesQueryParams(BaseModel):
-    date: Optional[date] = None
+    date: Optional[date_type] = None
     person: Optional[str] = None
 
     @field_validator("person")
