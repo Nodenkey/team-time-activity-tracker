@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View Entries - Team Time Activity Tracker</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <div>
+        <h1>Team Entries</h1>
+        <p class="tagline">Browse and filter everyone&apos;s logged time.</p>
+      </div>
+      <nav class="header-nav">
+        <a href="/index.html">Home</a>
+        <a href="/log.html">Log time</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <form id="filters-form" class="filters" novalidate>
+        <div class="filters-grid">
+          <div class="form-field">
+            <label for="filter-date">Date</label>
+            <input type="date" id="filter-date" name="date" />
+          </div>
+          <div class="form-field">
+            <label for="filter-person">Person</label>
+            <input type="text" id="filter-person" name="person" placeholder="e.g. Samuel Sackey" />
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit">Apply filters</button>
+          <button type="button" id="clear-filters" class="button-secondary">Clear</button>
+        </div>
+        <p id="filters-error" class="alert alert--error" role="alert" hidden></p>
+      </form>
+    </section>
+
+    <section class="card">
+      <div id="entries-loading" class="loading-text" aria-live="polite">Loading entries...</div>
+      <p id="entries-empty" class="muted" hidden>No entries found for the selected filters.</p>
+      <p id="entries-error" class="alert alert--error" role="alert" hidden></p>
+
+      <div class="table-wrapper" hidden id="entries-table-wrapper">
+        <table class="entries-table">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Person</th>
+              <th scope="col">Team</th>
+              <th scope="col">Activity</th>
+              <th scope="col">Duration (min)</th>
+            </tr>
+          </thead>
+          <tbody id="entries-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><a href="/log.html">Log a new entry</a></p>
+    </div>
+  </footer>
+
+  <script src="/js/config.js"></script>
+  <script src="/js/list.js"></script>
+</body>
+</html>

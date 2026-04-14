@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Time Activity Tracker</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Team Time Activity Tracker</h1>
+      <p class="tagline">Simple internal tool for logging and viewing daily time entries.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>What is this?</h2>
+      <p>
+        This lightweight app lets anyone on the team quickly log what they worked on
+        and see everyone&apos;s entries for the day. There is no login or roles – just
+        a shared view of activity.
+      </p>
+    </section>
+
+    <section class="grid grid-2">
+      <a class="nav-card" href="/log.html">
+        <h3>Log time</h3>
+        <p>Capture a new time entry with date, person, team, activity, and duration.</p>
+      </a>
+      <a class="nav-card" href="/list.html">
+        <h3>View entries</h3>
+        <p>Browse and filter all logged entries by date and person.</p>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Backend health: <span id="health-status" class="status-pill status-pill--unknown">Checking...</span></p>
+    </div>
+  </footer>
+
+  <script src="/js/config.js"></script>
+  <script src="/js/index.js"></script>
+</body>
+</html>
