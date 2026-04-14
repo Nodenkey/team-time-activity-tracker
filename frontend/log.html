@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log Time Entry - Team Time Activity Tracker</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <div>
+        <h1>Log Time Entry</h1>
+        <p class="tagline">Record what you worked on today.</p>
+      </div>
+      <nav class="header-nav">
+        <a href="/index.html">Home</a>
+        <a href="/list.html">View entries</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <form id="time-entry-form" novalidate>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required />
+            <p class="field-error" data-error-for="date"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="person">Person</label>
+            <input type="text" id="person" name="person" required />
+            <p class="field-error" data-error-for="person"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="team">Team</label>
+            <input type="text" id="team" name="team" required />
+            <p class="field-error" data-error-for="team"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="duration_minutes">Duration (minutes)</label>
+            <input type="number" id="duration_minutes" name="duration_minutes" min="1" step="1" required />
+            <p class="field-error" data-error-for="duration_minutes"></p>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="activity">Activity description</label>
+          <textarea id="activity" name="activity" rows="4" required></textarea>
+          <p class="field-error" data-error-for="activity"></p>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="submit-btn">Save entry</button>
+          <span id="form-loading" class="loading-text" aria-live="polite" hidden>Saving...</span>
+        </div>
+
+        <p id="form-success" class="alert alert--success" role="status" hidden></p>
+        <p id="form-error" class="alert alert--error" role="alert" hidden></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><a href="/list.html">View all entries</a></p>
+    </div>
+  </footer>
+
+  <script src="/js/config.js"></script>
+  <script src="/js/log.js"></script>
+</body>
+</html>
