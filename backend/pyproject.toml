@@ -1,8 +1,8 @@
 [project]
 name = "team-time-activity-tracker-backend"
 version = "0.1.0"
-description = "Backend API for the Team Time Activity Tracker MVP (FastAPI + in-memory store)"
-readme = "README.md"
+description = "Backend API for the Internal Team Time & Activity Tracker MVP"
+readme = "../README.md"
 requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.115.0",
